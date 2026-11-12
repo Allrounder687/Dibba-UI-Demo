@@ -4,10 +4,11 @@ Official next-generation digital platform for **Dibba Sports & Cultural Club (ن
 
 ## Live Showcase
 
-* **GitHub Repository:** `https://github.com/Allrounder687/Dibba-UI-Demo`
-* **Live Deployment (Vercel / Netlify):** _Pending Vercel/Netlify connection — deploy directly from this repo with 1 click:_
-  [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FAllrounder687%2FDibba-UI-Demo)
+* **Live Showcase (Netlify):** [https://dibba-ui-demo.netlify.app](https://dibba-ui-demo.netlify.app)
+* **GitHub Repository:** [https://github.com/Allrounder687/Dibba-UI-Demo](https://github.com/Allrounder687/Dibba-UI-Demo)
+* **1-Click Deploy:**
   [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Allrounder687/Dibba-UI-Demo)
+  [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FAllrounder687%2FDibba-UI-Demo)
 
 ---
 
