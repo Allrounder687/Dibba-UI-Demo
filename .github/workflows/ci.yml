@@ -1,0 +1,44 @@
+name: Dibba SCC CI/CD Pipeline
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: TypeScript type check
+        run: npx tsc --noEmit
+
+      - name: ESLint check
+        run: npm run lint
+
+      - name: Run unit & security tests (Vitest)
+        run: npm run test:unit
+
+      - name: Build production bundle
+        run: npm run build
+        env:
+          AUTH_SECRET: ci-test-secret-only-not-for-prod
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run Playwright E2E suite
+        run: npm run test:e2e
+        env:
+          AUTH_SECRET: ci-test-secret-only-not-for-prod
+          ADMIN_INITIAL_PASSWORD: ci-test-admin-password-2026

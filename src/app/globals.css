@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-deep-navy: #071426;
+  --color-club-navy: #0A2240;
+  --color-electric-blue: #2678FF;
+  --color-warm-gold: #D5A84B;
+  --color-off-white: #F5F7FA;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --font-sans: var(--font-geist-sans), var(--font-ibm-arabic), system-ui, -apple-system, sans-serif;
+  --font-arabic: var(--font-ibm-arabic), var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+:root {
+  --background: #F5F7FA;
+  --foreground: #071426;
+  --card: #FFFFFF;
+  --card-foreground: #071426;
+  --popover: #FFFFFF;
+  --popover-foreground: #071426;
+  --primary: #2678FF;
+  --primary-foreground: #FFFFFF;
+  --secondary: #0A2240;
+  --secondary-foreground: #F5F7FA;
+  --muted: #E6ECF4;
+  --muted-foreground: #475569;
+  --accent: #D5A84B;
+  --accent-foreground: #071426;
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --border: #DCE3EE;
+  --input: #CBD5E1;
+  --ring: #2678FF;
+  --radius: 0.75rem;
+}
+
+.dark-surface {
+  --background: #071426;
+  --foreground: #F5F7FA;
+  --card: #0A2240;
+  --card-foreground: #F5F7FA;
+  --popover: #0A2240;
+  --popover-foreground: #F5F7FA;
+  --muted: #102A4C;
+  --muted-foreground: #94A3B8;
+  --border: rgba(255, 255, 255, 0.12);
+  --input: rgba(255, 255, 255, 0.18);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[dir="rtl"] {
+  font-family: var(--font-arabic);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Luxury Stadium & Playable Surface Utilities */
+.luxury-floodlight {
+  background-image:
+    radial-gradient(ellipse 60% 45% at 20% 0%, rgba(38, 120, 255, 0.24), transparent 70%),
+    radial-gradient(ellipse 55% 45% at 85% 5%, rgba(213, 168, 75, 0.18), transparent 70%);
+}
+
+.pitch-turf {
+  background-color: #0b3b24;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.03) 0px,
+    rgba(255, 255, 255, 0.03) 36px,
+    transparent 36px,
+    transparent 72px
+  );
+}
+
+.gold-hairline {
+  background: linear-gradient(90deg, transparent, rgba(213, 168, 75, 0.75), transparent);
+}

@@ -1,0 +1,25 @@
+{
+  email admin@dibbaclub.ae
+}
+
+dibbaclub.ae, www.dibbaclub.ae {
+  encode zstd gzip
+
+  header {
+    Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+    X-Frame-Options "DENY"
+    X-Content-Type-Options "nosniff"
+    Referrer-Policy "strict-origin-when-cross-origin"
+    -Server
+  }
+
+  @staticAssets {
+    path /_next/static/* /assets/*
+  }
+  header @staticAssets Cache-Control "public, max-age=31536000, immutable"
+
+  reverse_proxy web:3000 {
+    health_uri /api/health
+    health_interval 30s
+  }
+}
