@@ -24,8 +24,10 @@
 .env*
 !.env.example
 
-# vercel
+# vercel & netlify
 .vercel
+.netlify
+
 
 # typescript
 *.tsbuildinfo
